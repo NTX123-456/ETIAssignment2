@@ -29,8 +29,8 @@ type Itinerarie struct {
 func main() {
 outer:
 	for {
-		fmt.Println("================================================")
-		fmt.Println("Welcome to the Travel Planner Console\n\n",
+		fmt.Println("                                                ")
+		fmt.Println("[Welcome to the Travel Planner Console]\n\n",
 			"(1) Proceed to itinerarie\n",
 			"(2) For Weather updates\n",
 			"(3) Airbnb\n",
@@ -56,8 +56,8 @@ outer:
 func itinerariemain() {
 outer:
 	for {
-		fmt.Println("================================================")
-		fmt.Println("You are currently in Itinerarie Management Console\n\n",
+		fmt.Println("                                                ")
+		fmt.Println("[You are currently in Itinerarie Management Console]\n",
 			"(1) View of itinerarie\n",
 			"(2) Create of itinerarie\n",
 			"(3) Edit & Update itinerarie\n",
@@ -68,9 +68,9 @@ outer:
 		fmt.Scanf("%d\n", &choice)
 
 		switch choice {
-		case 1: //List all itinerarie
+		case 1: //View all itinerarie
 			itinerarielist()
-		case 2: //Creating itinerarie
+		case 2: //Creating of itinerarie
 			itinerariecreate()
 		case 3: // edit & updating itinerarie
 		case 4: //Return to main page
@@ -82,7 +82,7 @@ outer:
 // Itinerarie list display
 func itinerarielist() {
 
-	//Conneting to MYSQL Database 'my_db'
+	//Conneting to MYSQL Database 'db_itinerarie'
 	db, err := sql.Open("mysql", "user:password@tcp(127.0.0.1:3306)/db_itinerarie")
 
 	//Handle error
@@ -91,11 +91,15 @@ func itinerarielist() {
 	}
 	defer db.Close()
 
-	//Retrieving driver's information from database
+	//Retrieving itinerarie information from database
 	results, err := db.Query("SELECT Location, Duration, StartDate, EndDate FROM itinerarie")
 	if err != nil {
 		panic(err.Error())
 	}
+
+	fmt.Println("                          ")
+	fmt.Println("Itinerarie being retrieved")
+	fmt.Println("___________________________")
 
 	for results.Next() {
 		var itinerarie Itinerarie
@@ -106,23 +110,21 @@ func itinerarielist() {
 		}
 
 		//Display database retrieved
-		fmt.Println("====================================")
-		fmt.Println("Itinerarie being retrieved")
+
 		fmt.Println("                                     ")
-		fmt.Println(" Location:"+itinerarie.Location+"\n",
+		fmt.Println(" Location: "+itinerarie.Location+"\n",
 			"Duration of days:", itinerarie.DurOfTravel, "\n",
 			"Start Date:", itinerarie.StartDate, "\n",
-			"End Date:"+itinerarie.EndDate)
+			"End Date: "+itinerarie.EndDate)
 	}
 }
 
-// Itinerarie creating an account
+// Creating of itinerarie
 func itinerariecreate() {
 	var newItineraries Itinerarie
-	var Location string
 
 	fmt.Print("\nPlease enter location (No space is required): ")
-	fmt.Scanf("%v\n", &Location)
+	fmt.Scanf("%v\n", &newItineraries.Location)
 
 	fmt.Print("Please enter the duration of travel (Days): ")
 	fmt.Scanf("%d\n", &(newItineraries.DurOfTravel))
@@ -151,7 +153,7 @@ func itinerariecreate() {
 		panic(err.Error())
 	}
 
-	//Using SQL func'INSERT' to add account into database
+	//Using SQL func'INSERT' to itinerarie into database
 	insert, err := db.Query("INSERT INTO `db_itinerarie`.`Itinerarie` (`Location`, `Duration`, `StartDate`, `EndDate`) VALUES (?, ?, ?, ?)", newItineraries.Location, newItineraries.DurOfTravel, newItineraries.StartDate, newItineraries.EndDate)
 	if err != nil {
 		panic(err.Error())
@@ -160,7 +162,7 @@ func itinerariecreate() {
 	fmt.Println("You have successfully added into the itineraries database")
 }
 
-// Itinerarie updating account
+// Still working on it
 func passengerupdate() {
 	var newItineraries Itinerarie
 	var Location string
