@@ -77,6 +77,120 @@ func CountryFilter(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func HotelStarFilter(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Query()
+
+	results := map[string]Hotel{}
+	if value := query.Get("q"); len(value) > 0 {
+		for k, v := range hotels {
+			if strings.Contains(strings.ToLower(v.HotelStar), strings.ToLower(value)) {
+				results[k] = v
+			}
+		}
+
+		if len(results) == 0 {
+			w.WriteHeader(http.StatusNotFound)
+			fmt.Fprintf(w, "No Hotel found")
+		} else {
+			json.NewEncoder(w).Encode(struct {
+				SearchResults map[string]Hotel `json:"Search Results"`
+			}{results})
+		}
+	} else if value := query.Get("value"); len(value) > 0 {
+		body, err := ioutil.ReadAll(r.Body)
+		fmt.Println(string(body), "\n", err)
+
+		if len(results) == 0 {
+			fmt.Fprintf(w, "No Hotel Found")
+		} else {
+			w.WriteHeader(http.StatusAccepted)
+			json.NewEncoder(w).Encode(struct {
+				SearchResults map[string]Hotel `json:"Hotels Found"`
+			}{results})
+		}
+	} else {
+		allhotels := AllHotels{hotels}
+
+		json.NewEncoder(w).Encode(allhotels)
+	}
+}
+
+func AmenitiesFilter(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Query()
+
+	results := map[string]Hotel{}
+	if value := query.Get("q"); len(value) > 0 {
+		for k, v := range hotels {
+			if strings.Contains(strings.ToLower(v.HotelAmenities), strings.ToLower(value)) {
+				results[k] = v
+			}
+		}
+
+		if len(results) == 0 {
+			w.WriteHeader(http.StatusNotFound)
+			fmt.Fprintf(w, "No Hotel found")
+		} else {
+			json.NewEncoder(w).Encode(struct {
+				SearchResults map[string]Hotel `json:"Search Results"`
+			}{results})
+		}
+	} else if value := query.Get("value"); len(value) > 0 {
+		body, err := ioutil.ReadAll(r.Body)
+		fmt.Println(string(body), "\n", err)
+
+		if len(results) == 0 {
+			fmt.Fprintf(w, "No Hotel Found")
+		} else {
+			w.WriteHeader(http.StatusAccepted)
+			json.NewEncoder(w).Encode(struct {
+				SearchResults map[string]Hotel `json:"Hotels Found"`
+			}{results})
+		}
+	} else {
+		allhotels := AllHotels{hotels}
+
+		json.NewEncoder(w).Encode(allhotels)
+	}
+}
+
+func CountryFilter(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Query()
+
+	results := map[string]Hotel{}
+	if value := query.Get("q"); len(value) > 0 {
+		for k, v := range hotels {
+			if strings.Contains(strings.ToLower(v.Country), strings.ToLower(value)) {
+				results[k] = v
+			}
+		}
+
+		if len(results) == 0 {
+			w.WriteHeader(http.StatusNotFound)
+			fmt.Fprintf(w, "No Hotel found")
+		} else {
+			json.NewEncoder(w).Encode(struct {
+				SearchResults map[string]Hotel `json:"Search Results"`
+			}{results})
+		}
+	} else if value := query.Get("value"); len(value) > 0 {
+		body, err := ioutil.ReadAll(r.Body)
+		fmt.Println(string(body), "\n", err)
+
+		if len(results) == 0 {
+			fmt.Fprintf(w, "No Hotel Found")
+		} else {
+			w.WriteHeader(http.StatusAccepted)
+			json.NewEncoder(w).Encode(struct {
+				SearchResults map[string]Hotel `json:"Hotels Found"`
+			}{results})
+		}
+	} else {
+		allhotels := AllHotels{hotels}
+
+		json.NewEncoder(w).Encode(allhotels)
+	}
+}
+
 func allhotels(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 
