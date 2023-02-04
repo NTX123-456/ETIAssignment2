@@ -41,7 +41,7 @@ type Hotel struct {
 	HotelAddr      string `json:"Hotel Address"`
 	HotelStar      int    `json:"Hotel Stars"`
 	HotelAmenities string `json:"Hotel Amenities"`
-	Price          string `json:"Hotel Price"`
+	Price          int    `json:"Hotel Price"`
 	Country        string `json:"Hotel Amenities"`
 }
 
