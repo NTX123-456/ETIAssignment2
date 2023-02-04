@@ -29,8 +29,8 @@ type Itinerarie struct {
 func main() {
 outer:
 	for {
-		fmt.Println("================================================")
-		fmt.Println("Welcome to the Travel Planner Console\n\n",
+		fmt.Println("                                                ")
+		fmt.Println("[Welcome to the Travel Planner Console]\n\n",
 			"(1) Proceed to itinerarie\n",
 			"(2) For Weather updates\n",
 			"(3) Airbnb\n",
@@ -56,8 +56,8 @@ outer:
 func itinerariemain() {
 outer:
 	for {
-		fmt.Println("================================================")
-		fmt.Println("You are currently in Itinerarie Management Console\n\n",
+		fmt.Println("                                                ")
+		fmt.Println("[You are currently in Itinerarie Management Console]\n",
 			"(1) View of itinerarie\n",
 			"(2) Create of itinerarie\n",
 			"(3) Edit & Update itinerarie\n",
@@ -97,6 +97,10 @@ func itinerarielist() {
 		panic(err.Error())
 	}
 
+	fmt.Println("                          ")
+	fmt.Println("Itinerarie being retrieved")
+	fmt.Println("___________________________")
+
 	for results.Next() {
 		var itinerarie Itinerarie
 
@@ -106,23 +110,22 @@ func itinerarielist() {
 		}
 
 		//Display database retrieved
-		fmt.Println("====================================")
-		fmt.Println("Itinerarie being retrieved")
+
 		fmt.Println("                                     ")
-		fmt.Println(" Location:"+itinerarie.Location+"\n",
+		fmt.Println(" Location: "+itinerarie.Location+"\n",
 			"Duration of days:", itinerarie.DurOfTravel, "\n",
 			"Start Date:", itinerarie.StartDate, "\n",
-			"End Date:"+itinerarie.EndDate)
+			"End Date: "+itinerarie.EndDate)
 	}
 }
 
 // Itinerarie creating an account
 func itinerariecreate() {
 	var newItineraries Itinerarie
-	var Location string
+	//var Location string
 
 	fmt.Print("\nPlease enter location (No space is required): ")
-	fmt.Scanf("%v\n", &Location)
+	fmt.Scanf("%v\n", &newItineraries.Location)
 
 	fmt.Print("Please enter the duration of travel (Days): ")
 	fmt.Scanf("%d\n", &(newItineraries.DurOfTravel))
