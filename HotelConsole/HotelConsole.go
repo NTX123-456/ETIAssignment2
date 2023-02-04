@@ -19,7 +19,7 @@ outer:
 		fmt.Println(strings.Repeat("=", 10))
 		fmt.Println("Get Hotels\n",
 			"1. List all Hotels\n",
-			"2. List all Hotels\n",
+			"2. List Hotels by country\n",
 			"3. Quit")
 		fmt.Print("Enter an option: ")
 
