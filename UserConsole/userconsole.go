@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"bytes"
+	"io/ioutil"
 
 	"database/sql"
 	"encoding/json"
@@ -25,6 +26,13 @@ type Itinerarie struct {
 	EndDate     string `json:"End Date"`
 }
 
+type WeatherForecast struct {
+	Name string `json:"Name"`
+	Main struct {
+		Temp float64 `json:"Temp"`
+	} `json:"Main"`
+}
+
 // Starting main console
 func main() {
 outer:
@@ -32,7 +40,7 @@ outer:
 		fmt.Println("                                                ")
 		fmt.Println("[Welcome to the Travel Planner Console]\n\n",
 			"(1) Proceed to itinerarie\n",
-			"(2) For Weather updates\n",
+			"(2) Weather Update\n",
 			"(3) Airbnb\n",
 			"(4) Quit")
 		fmt.Print("Enter an option: ")
@@ -44,6 +52,7 @@ outer:
 		case 1: //Create Itinerarie
 			itinerariemain()
 		case 2: //Weather Update
+			weatherForecast()
 		case 3: //Airbnb
 		case 4: //quit
 
@@ -194,6 +203,29 @@ func passengerupdate() {
 				fmt.Println("Itinerarie", Location, "is being updated")
 			} else if res.StatusCode == 409 {
 				fmt.Println("Error - itinerarie", Location, "is not being updated")
+			}
+		}
+	}
+}
+
+// Display temperature of location entered
+func weatherForecast() {
+	var inputLocation string
+
+	fmt.Print("\nPlease enter location: ")
+	fmt.Scanf("%v\n", &inputLocation)
+
+	client := &http.Client{}
+	if req, err := http.NewRequest(http.MethodGet, "http://localhost:5010/weather/"+inputLocation, nil); err == nil {
+		if res, err := client.Do(req); err == nil {
+			if body, err := ioutil.ReadAll(res.Body); err == nil {
+				var res WeatherForecast
+				json.Unmarshal(body, &res)
+				if res.Name == "" {
+					fmt.Println("Country not found!")
+				} else {
+					fmt.Println("Temperature in", res.Name, ":", res.Main.Temp, "°C")
+				}
 			}
 		}
 	}
