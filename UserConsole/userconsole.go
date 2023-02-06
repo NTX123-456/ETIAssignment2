@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"bytes"
 	"io/ioutil"
 
 	"database/sql"
@@ -69,7 +68,7 @@ outer:
 		fmt.Println("[You are currently in Itinerarie Management Console]\n",
 			"(1) View of itinerarie\n",
 			"(2) Create of itinerarie\n",
-			"(3) Edit & Update itinerarie\n",
+			"(3) Update itinerarie (Duration, Start & End Date)\n",
 			"(4) Back")
 		fmt.Print("Enter an option: ")
 
@@ -82,6 +81,7 @@ outer:
 		case 2: //Creating of itinerarie
 			itinerariecreate()
 		case 3: // edit & updating itinerarie
+			itinerariesupdate()
 		case 4: //Return to main page
 			break outer
 		}
@@ -108,7 +108,7 @@ func itinerarielist() {
 
 	fmt.Println("                          ")
 	fmt.Println("Itinerarie being retrieved")
-	fmt.Println("___________________________")
+	fmt.Println("===================================================")
 
 	for results.Next() {
 		var itinerarie Itinerarie
@@ -125,7 +125,10 @@ func itinerarielist() {
 			"Duration of days:", itinerarie.DurOfTravel, "\n",
 			"Start Date:", itinerarie.StartDate, "\n",
 			"End Date: "+itinerarie.EndDate)
+
 	}
+	fmt.Println("===================================================")
+
 }
 
 // Creating of itinerarie
@@ -171,40 +174,57 @@ func itinerariecreate() {
 	fmt.Println("You have successfully added into the itineraries database")
 }
 
-// Still working on it
-func passengerupdate() {
-	var newItineraries Itinerarie
-	var Location string
+// Updating of of itinerarie
+func itinerariesupdate() {
+	var editItineraries Itinerarie
 
-	fmt.Print("\nPlease enter location: ")
-	fmt.Scanf("%v\n", &Location)
+	fmt.Print("\nPlease enter your location to be updated (No space is required): ")
+	fmt.Scanf("%s\n", &editItineraries.Location)
 
 	fmt.Print("Please enter the duration of travel: ")
-	fmt.Scanf("%d\n", &(newItineraries.DurOfTravel))
+	fmt.Scanf("%d\n", &editItineraries.DurOfTravel)
 
-	fmt.Print("Please enter start date: ")
+	fmt.Print("Please enter start date (dd/mm/yyyy): ")
 	reader0 := bufio.NewReader(os.Stdin)
 	input0, _ := reader0.ReadString('\n')
-	newItineraries.StartDate = strings.TrimSpace(input0)
+	editItineraries.StartDate = strings.TrimSpace(input0)
 
-	fmt.Print("Please enter end date: ")
+	fmt.Print("Please enter end date (dd/mm/yyyy): ")
 	reader1 := bufio.NewReader(os.Stdin)
 	input1, _ := reader1.ReadString('\n')
-	newItineraries.EndDate = strings.TrimSpace(input1)
+	editItineraries.EndDate = strings.TrimSpace(input1)
 
-	jsonString, _ := json.Marshal(newItineraries)
-	resbody := bytes.NewBuffer(jsonString)
+	db, err := sql.Open("mysql", "user:password@tcp(127.0.0.1:3306)/db_itinerarie")
 
-	client := &http.Client{}
-	if req, err := http.NewRequest(http.MethodPut, "http://localhost:5000/api/v1/itineraries/"+Location, resbody); err == nil {
-		if res, err := client.Do(req); err == nil {
+	//Handle error
+	if err != nil {
+		panic(err.Error())
+	}
+	err = db.Ping()
+	if err != nil {
+		fmt.Println("error")
+		panic(err.Error())
+	}
 
-			if res.StatusCode == 202 {
-				fmt.Println("Itinerarie", Location, "is being updated")
-			} else if res.StatusCode == 409 {
-				fmt.Println("Error - itinerarie", Location, "is not being updated")
-			}
+	result1 := db.QueryRow("select * from Itinerarie where Location= ? ", editItineraries.Location)
+
+	err1 := result1.Scan(editItineraries.DurOfTravel, editItineraries.StartDate, editItineraries.EndDate)
+
+	if err1 == sql.ErrNoRows {
+		fmt.Println("This Location does not exist, please try again")
+	} else {
+		// SQL update function
+		result, err := db.Exec("Update Itinerarie set Duration = ?, StartDate = ?, EndDate = ? where Location = ? ",
+			editItineraries.DurOfTravel, editItineraries.StartDate, editItineraries.EndDate, editItineraries.Location)
+		if err != nil {
+			panic(err.Error())
 		}
+		id, err := result.RowsAffected()
+		if err != nil {
+			panic(err.Error())
+		}
+		fmt.Printf("Itinerarie successful updated : %d \n", id)
+		defer db.Close()
 	}
 }
 
