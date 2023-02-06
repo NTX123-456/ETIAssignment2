@@ -48,7 +48,7 @@ outer:
 		fmt.Scanf("%d\n", &choice)
 
 		switch choice {
-		case 1: //Create Itinerarie
+		case 1: // Itinerarie features
 			itinerariemain()
 		case 2: //Weather Update
 			weatherForecast()
@@ -60,7 +60,7 @@ outer:
 	}
 }
 
-// Itinerarie main page
+// Itinerarie main console page
 func itinerariemain() {
 outer:
 	for {
@@ -76,31 +76,31 @@ outer:
 		fmt.Scanf("%d\n", &choice)
 
 		switch choice {
-		case 1: //View all itinerarie
+		case 1: // View all itineraries
 			itinerarielist()
-		case 2: //Creating of itinerarie
+		case 2: // Creating of itineraries
 			itinerariecreate()
 		case 3: // edit & updating itinerarie
 			itinerariesupdate()
-		case 4: //Return to main page
+		case 4: // Return to main page
 			break outer
 		}
 	}
 }
 
-// Itinerarie list display
+// Display all Itineraries through database (db_itinerarie)
 func itinerarielist() {
 
-	//Conneting to MYSQL Database 'db_itinerarie'
+	// Conneting with MYSQL Database 'db_itinerarie'
 	db, err := sql.Open("mysql", "user:password@tcp(127.0.0.1:3306)/db_itinerarie")
 
-	//Handle error
+	// Handle error
 	if err != nil {
 		panic(err.Error())
 	}
 	defer db.Close()
 
-	//Retrieving itinerarie information from database
+	// Using SQL command 'SELECT' to retrieve itineraries from database
 	results, err := db.Query("SELECT Location, Duration, StartDate, EndDate FROM itinerarie")
 	if err != nil {
 		panic(err.Error())
@@ -118,8 +118,7 @@ func itinerarielist() {
 			panic(err.Error())
 		}
 
-		//Display database retrieved
-
+		// Display database information being retrieved
 		fmt.Println("                                     ")
 		fmt.Println(" Location: "+itinerarie.Location+"\n",
 			"Duration of days:", itinerarie.DurOfTravel, "\n",
@@ -131,7 +130,7 @@ func itinerarielist() {
 
 }
 
-// Creating of itinerarie
+// Creating new itinerarie
 func itinerariecreate() {
 	var newItineraries Itinerarie
 
@@ -153,7 +152,7 @@ func itinerariecreate() {
 
 	db, err := sql.Open("mysql", "user:password@tcp(127.0.0.1:3306)/db_itinerarie")
 
-	//Handle error
+	// Handle error
 	if err != nil {
 		panic(err.Error())
 	}
@@ -165,7 +164,7 @@ func itinerariecreate() {
 		panic(err.Error())
 	}
 
-	//Using SQL func'INSERT' to itinerarie into database
+	// Using SQL command 'INSERT' to create new itinerarie into database
 	insert, err := db.Query("INSERT INTO `db_itinerarie`.`Itinerarie` (`Location`, `Duration`, `StartDate`, `EndDate`) VALUES (?, ?, ?, ?)", newItineraries.Location, newItineraries.DurOfTravel, newItineraries.StartDate, newItineraries.EndDate)
 	if err != nil {
 		panic(err.Error())
@@ -174,7 +173,7 @@ func itinerariecreate() {
 	fmt.Println("You have successfully added into the itineraries database")
 }
 
-// Updating of of itinerarie
+// Update existing itinerarie
 func itinerariesupdate() {
 	var editItineraries Itinerarie
 
@@ -196,7 +195,7 @@ func itinerariesupdate() {
 
 	db, err := sql.Open("mysql", "user:password@tcp(127.0.0.1:3306)/db_itinerarie")
 
-	//Handle error
+	// Handle error
 	if err != nil {
 		panic(err.Error())
 	}
@@ -213,7 +212,7 @@ func itinerariesupdate() {
 	if err1 == sql.ErrNoRows {
 		fmt.Println("This Location does not exist, please try again")
 	} else {
-		// SQL update function
+		// Using SQL command 'UPDATE' to update existing itinerarie within the database
 		result, err := db.Exec("Update Itinerarie set Duration = ?, StartDate = ?, EndDate = ? where Location = ? ",
 			editItineraries.DurOfTravel, editItineraries.StartDate, editItineraries.EndDate, editItineraries.Location)
 		if err != nil {
