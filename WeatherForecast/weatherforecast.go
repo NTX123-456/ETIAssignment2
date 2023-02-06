@@ -12,11 +12,11 @@ type apiConfigData struct {
 	OpenWeatherMapApiKey string `json:"OpenWeatherMapApiKey`
 }
 
-type weatherData struct {
-	Name string `json:"name"`
+type WeatherForecast struct {
+	Name string `json:"Name"`
 	Main struct {
-		Celsius float64 `json:"temp"`
-	} `json:"main"`
+		Temp float64 `json:"Temp"`
+	} `json:"Main"`
 }
 
 func main() {
@@ -50,27 +50,28 @@ func weatherFilter(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	json.NewEncoder(w).Encode(data)
 }
 
-func query(city string) (weatherData, error) {
+// function to retrieve weather data based on the Country
+func query(city string) (WeatherForecast, error) {
 	apiConfig, err := loadApiConfig(".apiConfig")
 
 	if err != nil {
-		return weatherData{}, err
+		return WeatherForecast{}, err
 	}
 
+	//Weather API (parameters: API key, Unit of temperature (Celsius), Country)
 	resp, err := http.Get("http://api.openweathermap.org/data/2.5/weather?APPID=" + apiConfig.OpenWeatherMapApiKey + "&units=metric" + "&q=" + city)
 
 	if err != nil {
-		return weatherData{}, err
+		return WeatherForecast{}, err
 	}
 	defer resp.Body.Close()
 
-	var d weatherData
+	var d WeatherForecast
 	if err := json.NewDecoder(resp.Body).Decode(&d); err != nil {
-		return weatherData{}, err
+		return WeatherForecast{}, err
 	}
 	return d, nil
 }
