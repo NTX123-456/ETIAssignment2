@@ -32,20 +32,23 @@ var hotels map[string]Hotel = map[string]Hotel{
 
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/api/v1/hotels", CountryFilter)
+	router.HandleFunc("/api/v1/hotels/Country", CountryFilter)
+	router.HandleFunc("/api/v1/hotels/HotelStar", HotelStarFilter)
+	router.HandleFunc("/api/v1/hotels/Amenities", AmenitiesFilter)
+	router.HandleFunc("/api/v1/hotels/Price", PriceFilter)
 	router.HandleFunc("/api/v1/hotels/{hotel_id}", allhotels).Methods("GET")
 
 	fmt.Println("Listening at port 5000")
 	log.Fatal(http.ListenAndServe(":5000", router))
 }
 
-func CountryFilter(w http.ResponseWriter, r *http.Request) {
+func PriceFilter(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 
 	results := map[string]Hotel{}
 	if value := query.Get("q"); len(value) > 0 {
 		for k, v := range hotels {
-			if strings.Contains(strings.ToLower(v.Country), strings.ToLower(value)) {
+			if strings.Contains(strings.ToLower(v.Price), strings.ToLower(value)) {
 				results[k] = v
 			}
 		}
