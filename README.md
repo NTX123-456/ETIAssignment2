@@ -3,11 +3,13 @@
 <h2> Description </h2>
 <p> A simple travel planning application that can assist users in better planning their itinerary, allowing them to make more informed decisions about the country or accommodation they are staying in. </p>
 <h2> How to set up </h2>
-<p> For this application there are a total of 3 programs to run (open 3 separate terminals and enter "go run [PROGRAM_NAME]" in their own directory to configure):
+<p> 1. For this application there are a total of 3 programs to run (open 3 separate terminals and enter "go run [PROGRAM_NAME]" in their own directory to configure):
 
 1. UserConsole.go (the main console where all the information will be displayed)
 2. WeatherForecast.go
 3. server.go </p>
+
+<p> 2. Run the 2 database scripts (HotelDatabaseScript.sql & Itineraries DB.sql) in MYSQL to configure</p>
 
 <h1> Features </h1>
 
