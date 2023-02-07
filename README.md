@@ -82,12 +82,12 @@ Current countries available in the database:
 <h3> Description: A Feature that allows user to view a list of hotel and attraction prices, after which user can start to book them. User can also choose to update or cancel their booking. </h3>
 
 <h3> Options </h3>
-<h4> "Guide to start off booking feature"
+<h4> Guide to start off booking feature:
 <h4> User will be required to input their name to begin with this feature. </h4>
-<h4> 1. Listing all tourist and attractions and hotels </h4>
+<h4> 1. Listing all tourist attractions and hotels </h4>
 <p> This option allow user to list out all tourist attractions and hotels that are available with the pricing. </p>
 
-<h4> 2. Listing all tourist and attractions and hotels </h4>
+<h4> 2. Book tourist attractions and hotels </h4>
 <p> This option allows user to book an attraction or hotel by choosing the correct id, once id is confirmed, click on enter and the booking will be successful. </p>
 <p> Example of Attractions and Hotels are in Singapore’s context. </p>
 
