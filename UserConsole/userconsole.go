@@ -267,7 +267,7 @@ func itinerarielist() {
 
 }
 
-// Creating new itinerarie
+// Creating of new itinerarie
 func itinerariecreate() {
 	var newItineraries Itinerarie
 
