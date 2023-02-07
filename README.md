@@ -59,8 +59,8 @@ Current countries available in the database:
 5. Australia
 </p>
 
-<h4> 3. Display Hotels with a certain star </h4>
-<p> This feature allows the user to display all the hotels with a certain star rating. For example, the user can input the number 4 into the console and it will retrieve all the 4 star hotels from the database and display it. </p>
+<h4> 3. Display Hotels with a certain rating </h4>
+<p> This feature allows the user to display all the hotels with a certain rating. For example, the user can input the number 4 into the console and it will retrieve all the 4 star hotels from the database and display it. </p>
 
 <h4> 4. Display Hotels with certain amenities </h4>
 <p> This feature allows the user to display all the hotels with certain amenities. For example, if the user wants to view hotels with Pools, the user can input pools and the console will retrieve all the hotels with pools in their amenities. </p>
@@ -79,3 +79,23 @@ Current countries available in the database:
 
 
 <h2> Booking Hotels & Attractions </h2>
+<h3> Description: A Feature that allows user to view a list of hotel and attraction prices, after which user can start to book them. User can also choose to update or cancel their booking. </h3>
+
+<h3> Options </h3>
+<h4> Guide to start off booking feature:
+<h4> User will be required to input their name to begin with this feature. </h4>
+<h4> 1. Listing all tourist attractions and hotels </h4>
+<p> This option allow user to list out all tourist attractions and hotels that are available with the pricing. </p>
+
+<h4> 2. Book tourist attractions and hotels </h4>
+<p> This option allows user to book an attraction or hotel by choosing the correct id, once id is confirmed, click on enter and the booking will be successful. </p>
+<p> Example of Attractions and Hotels are in Singapore’s context. </p>
+
+<h4> 3. Cancel or update booking </h4>
+<p> This option allows user to either cancel a booking by typing out ‘cancel <id>’ or update a booking by typing out ‘update <id>’, where id is the number located on the left of each attraction or hotel. 
+For update of booking the console will prompt user to pick another attraction or hotel by keying in the ideal id, after which the booking will be updated successfully.
+</p>
+
+<h4> Navigation options </h4>
+<p> Type ‘main’ to return to main menu. </p>
+<p> Type ‘quit’ to exit the program. </p>
