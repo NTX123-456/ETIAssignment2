@@ -155,9 +155,9 @@ outer:
 			weatherForecast()
 		case 3: //View Hotels
 			HotelConsole()
-		case 4: //quit
+		case 4: //Booking Hotel/Attractions
 			BookingMenu()
-		case 5:
+		case 5: //Quit
 			break outer
 		}
 	}
@@ -199,7 +199,7 @@ outer:
 		fmt.Println("Get Hotels\n",
 			"1. List all Hotels\n",
 			"2. List Hotels by Country\n",
-			"3. List Hotels by Hotel Star\n",
+			"3. List Hotels by Hotel rating\n",
 			"4. List Hotels by Hotel Amenities\n",
 			"5. List Hotels by Price\n",
 			"6. Quit")
@@ -428,7 +428,7 @@ func getHotelsbyCountry() {
 func getHotelsbyStar() {
 	var h Hotel
 
-	fmt.Println("Enter the amount of stars of the hotel: ")
+	fmt.Println("Enter the amount of rating of the hotel: ")
 	fmt.Scanf("%d\n", &h.HotelStar)
 
 	db, err := sql.Open("mysql", "root:Lolman@4567@tcp(127.0.0.1:3306)/ETIASSG2_db")
