@@ -7,7 +7,7 @@
 
 <h1> Features </h1>
 
-<h2> Itenary Planning </h2
+<h2> Itenary Planning </h2>
   
 <h2> Weather Update </h2>
 
