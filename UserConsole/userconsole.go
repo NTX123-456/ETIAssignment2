@@ -771,9 +771,9 @@ func BookingMenu() {
 			printTitle()
 			continue
 		case "quit", "exit":
-			fmt.Println(" Bye bye!")
+			fmt.Println("Bye bye!")
 			fmt.Println()
-			os.Exit(0)
+			main()
 		default:
 			printTitle()
 			printStatusMessage(fmt.Sprintf("'%s' is not a correct option, try again", text))
