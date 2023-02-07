@@ -317,15 +317,15 @@ func itinerariesupdate() {
 	fmt.Print("\nPlease enter your location to be updated (No space is required): ")
 	fmt.Scanf("%s\n", &editItineraries.Location)
 
-	fmt.Print("Please enter the duration of travel: ")
+	fmt.Print("Please enter the duration of travel to be updated: ")
 	fmt.Scanf("%d\n", &editItineraries.DurOfTravel)
 
-	fmt.Print("Please enter start date (dd/mm/yyyy): ")
+	fmt.Print("Please enter start date to be updated(dd/mm/yyyy): ")
 	reader0 := bufio.NewReader(os.Stdin)
 	input0, _ := reader0.ReadString('\n')
 	editItineraries.StartDate = strings.TrimSpace(input0)
 
-	fmt.Print("Please enter end date (dd/mm/yyyy): ")
+	fmt.Print("Please enter end date to be updated(dd/mm/yyyy): ")
 	reader1 := bufio.NewReader(os.Stdin)
 	input1, _ := reader1.ReadString('\n')
 	editItineraries.EndDate = strings.TrimSpace(input1)

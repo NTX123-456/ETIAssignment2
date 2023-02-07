@@ -7,17 +7,40 @@
 
 <h1> Features </h1>
 
-<<<<<<< HEAD
+
 <h2> Planning of itinerarie </h2>
-<p>Within the console of the option 'Planning of itinerarie' is an details plan of journey that is associated with features like viewing, creating, and updating of your personal itinerarie.</p>
+<h3> Description: Within the console of the option 'Planning of itinerarie' is an details plan of journey that is associated with features like viewing, creating, and updating of your personal itinerarie. </h3>
+<h3> Options </h3>
+<h4> 1. View of itinerarie </h4>
+<p> This feature is a detailed list of places that users have created into the itinerarie that consists of information like Location, Duration(days), Start Date, and End Date. With all this data results it could be retrieved through MYSQL database with the SELECT statement. </p>
+
+<h4> 2. Create of itinerarie </h4>
+<p> This feature will enables a outline of users creating travel itinerary through a new records into MYSQL database with the INSERT statement, that could includes adding of details of Location, Duration(days), Start Date, and End Date. 
+
+Obtaining users question like:
+1. Please enter the location:
+2. Please enter the duration of travel (days):
+3. Please enter start date (dd/mm/yyyy):
+4. Please enter end date (dd/mm/yyyy):
+</p>
+
+<h4> 3. Update itinerarie </h4>
+<p> This feature designed to allows users to make amend changes in duration of travel, start date, and end date. Subsequently, with the SQL UPDATE statement it will execute the modification towards the exisitng records into the database of data Duration(days), Start Date, and End Date. 
+
+Obtaining users question to be updated:
+1. Please enter your location to be updated:
+2. Please enter the duration of travel to be updated:
+3. Please enter the start date to be updated (dd/mm/yyyy):
+4. Please enter the end date to be updated (dd/mm/yyyy):
+</p>
 
 
 
-=======
-<h2> Itenary Planning </h2>
-  
->>>>>>> 883853545fbea53b0cd2b1a7a7c2ebcc8d47816c
+
 <h2> Weather Update </h2>
+
+
+
 
 <h2> View Hotel Information </h2>
 <h3> Description: A Feature that allows users to select and display a list of hotels available in Singapore and other countries </h3>
@@ -50,8 +73,9 @@ Current countries available in the database:
   3. Hotels between $100 and $200
   4. Hotels between $200 and $300
   5. Hotels between $300 and $400
-
-
 </p>
+
+
+
 
 <h2> Booking Hotels & Attractions </h2>
