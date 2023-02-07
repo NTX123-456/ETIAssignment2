@@ -1,4 +1,4 @@
-# ETIAssignment2 Documentation
+# Documentation
 
 <h1> Concept of Application: Travel Planning/Booking Application </h1>
 
