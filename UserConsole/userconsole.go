@@ -158,7 +158,7 @@ outer:
 		case 4: //Booking Hotel/Attractions
 			BookingMenu()
 		case 5: //Quit
-			os.Exit(0)
+			break outer
 		}
 	}
 }
