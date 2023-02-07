@@ -59,8 +59,8 @@ Current countries available in the database:
 5. Australia
 </p>
 
-<h4> 3. Display Hotels with a certain star </h4>
-<p> This feature allows the user to display all the hotels with a certain star rating. For example, the user can input the number 4 into the console and it will retrieve all the 4 star hotels from the database and display it. </p>
+<h4> 3. Display Hotels with a certain rating </h4>
+<p> This feature allows the user to display all the hotels with a certain rating. For example, the user can input the number 4 into the console and it will retrieve all the 4 star hotels from the database and display it. </p>
 
 <h4> 4. Display Hotels with certain amenities </h4>
 <p> This feature allows the user to display all the hotels with certain amenities. For example, if the user wants to view hotels with Pools, the user can input pools and the console will retrieve all the hotels with pools in their amenities. </p>
