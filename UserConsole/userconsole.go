@@ -138,7 +138,7 @@ outer:
 	for {
 		fmt.Println("                                                ")
 		fmt.Println("[Welcome to the Travel Planner Console]\n\n",
-			"(1) Proceed to itinerarie\n",
+			"(1) Planning of itinerarie\n",
 			"(2) Weather Update\n",
 			"(3) View Hotels\n",
 			"(4) Booking Hotel & Attractions\n",
