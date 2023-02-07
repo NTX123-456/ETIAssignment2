@@ -49,11 +49,11 @@ type BookedPackage struct {
 var db *gorm.DB
 
 const (
-	dbUsername = "user"       // todo: replace if necessary
-	dbPassword = "password"   // todo: replace if necessary
-	dbAddress  = "127.0.0.1"  // todo: replace if necessary
-	dbPort     = "3306"       // todo: replace if necessary
-	dbName     = "booking_db" // todo: replace if necessary
+	dbUsername = "user"
+	dbPassword = "password"
+	dbAddress  = "127.0.0.1"
+	dbPort     = "3306"
+	dbName     = "booking_db"
 )
 
 func initDatabase() {
