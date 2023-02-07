@@ -48,9 +48,7 @@ func PriceFilter(w http.ResponseWriter, r *http.Request) {
 	results := map[string]Hotel{}
 	if value := query.Get("q"); len(value) > 0 {
 		for k, v := range hotels {
-			if strings.Contains(strings.ToLower(v.Price), strings.ToLower(value)) {
-				results[k] = v
-			}
+			results[k] = v
 		}
 
 		if len(results) == 0 {
@@ -86,9 +84,7 @@ func HotelStarFilter(w http.ResponseWriter, r *http.Request) {
 	results := map[string]Hotel{}
 	if value := query.Get("q"); len(value) > 0 {
 		for k, v := range hotels {
-			if strings.Contains(strings.ToLower(v.HotelStar), strings.ToLower(value)) {
-				results[k] = v
-			}
+			results[k] = v
 		}
 
 		if len(results) == 0 {
