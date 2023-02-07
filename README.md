@@ -29,12 +29,21 @@ Current countries available in the database:
 </p>
 
 <h4> 3. Display Hotels with a certain star </h4>
-<p> This feature allows the user to display all the hotels available in the database with no filters. </p>
+<p> This feature allows the user to display all the hotels with a certain star rating. For example, the user can input the number 4 into the console and it will retrieve all the 4 star hotels from the database and display it. </p>
 
 <h4> 4. Display Hotels with certain amenities </h4>
-<p> This feature allows the user to display all the hotels available in the database with no filters. </p>
+<p> This feature allows the user to display all the hotels with certain amenities. For example, if the user wants to view hotels with Pools, the user can input pools and the console will retrieve all the hotels with pools in their amenities. </p>
 
 <h4> 5. Display Hotels from a certain price range </h4>
-<p> This feature allows the user to display all the hotels available in the database with no filters. </p>
+<p> This feature allows the user to display hotels from a certain price range they want. There are a total of 5 price ranges the user can choose from
+
+  1. Hotels below $50
+  2. Hotels between $50 and $100
+  3. Hotels between $100 and $200
+  4. Hotels between $200 and $300
+  5. Hotels between $300 and $400
+
+
+</p>
 
 <h2> Booking Hotels & Attractions </h2>
