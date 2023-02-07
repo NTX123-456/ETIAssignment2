@@ -133,7 +133,7 @@ var reader = bufio.NewReader(os.Stdin)
 var username string
 
 // Starting main console
-func BookingConsole() {
+func main() {
 outer:
 	for {
 		fmt.Println("                                                ")
