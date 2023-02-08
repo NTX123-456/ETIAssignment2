@@ -31,7 +31,7 @@
 
   1. Create the booking database in MYSQL with these configurations:
    ![image](https://user-images.githubusercontent.com/73065899/217422202-eead80c2-0e1b-4fb8-81ba-e1cedd88a801.png)
-    Connection name: booking_db
+    <br>Connection name: booking_db</br>
   2. Run the server file in the booking feature folder: 
   ![image](https://user-images.githubusercontent.com/73065899/217423014-3d92064a-c1a6-43a5-90ab-e0c436b6ad2f.png)
   Once you have seen the message "successfully init db" we can move to the next step
