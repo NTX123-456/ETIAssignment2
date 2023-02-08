@@ -13,19 +13,19 @@
 <p> 2. Run the 2 database scripts (HotelDatabaseScript.sql & Itineraries DB.sql) in MYSQL to configure.
   
  Database Configuration for HotelDatabase: ![image](https://user-images.githubusercontent.com/73065899/217423817-eadc3fc5-6e7f-434b-bde0-edc1f62b3e3f.png)
-Use these credentials to configure the database for hotels:
-  User: root
-  Password: Lolman@4567
-  connection: 127.0.0.1:3306
-  Database: ETIASSG2_db
+<br> Use these credentials to configure the database for hotels: </br>
+<br> User: root </br>
+<br> Password: Lolman@4567 </br>
+<br> connection: 127.0.0.1:3306 </br>
+<br>  Database: ETIASSG2_db  </br>
   
  Database Configuration for Itenary database:
   ![image](https://user-images.githubusercontent.com/73065899/217424942-7f38eb76-ec70-4642-a7de-63f238fd9704.png)
-Use these credentials to configure the database for hotels:
-  User: user
-  Password: password
-  connection: 127.0.0.1:3306
-  Database: db_itinerarie
+<br>Use these credentials to configure the database for hotels:</br>
+  <br>User: user </br>
+  <br>Password: password </br>
+  <br> connection: 127.0.0.1:3306 </br>
+  <br> Database: db_itinerarie </br>
   
   For the database for the booking of hotels and attractions feature there are three steps in order to initialize the database:
 
