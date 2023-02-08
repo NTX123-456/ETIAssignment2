@@ -24,7 +24,7 @@
 <br>Use these credentials to configure the database for hotels:</br>
   <br>User: user </br>
   <br>Password: password </br>
-  <br> connection: 127.0.0.1:3306 </br>
+  <br>connection: 127.0.0.1:3306 </br>
   <br> Database: db_itinerarie </br>
   
   For the database for the booking of hotels and attractions feature there are three steps in order to initialize the database:
