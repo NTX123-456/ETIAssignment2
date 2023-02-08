@@ -1,7 +1,8 @@
 <h1> Concept of Application: Travel Planning Application </h1>
 
 <h2> Description </h2>
-<p> A simple travel planning application that can assist users in better planning their itinerary, allowing them to make more informed decisions about the country or accommodation they are staying in. </p>
+<p> A simple travel planning application that can assist users in better planning their itinerary, allowing them to make more informed decisions about the country or accommodation they are staying in. There are 4 different Microservices, 3 of these microservices have their own seperate database in MYSQL with the exception of the weather update feature utilising a API to display the current weather from the selected country. </p>
+
 <h2> How to set up </h2>
 <p> 1. For this application there are a total of 3 programs to run (open 3 separate terminals and enter "go run [PROGRAM_NAME]" in their own directory to configure):
 
@@ -9,7 +10,37 @@
 2. WeatherForecast.go
 3. server.go </p>
 
-<p> 2. Run the 2 database scripts (HotelDatabaseScript.sql & Itineraries DB.sql) in MYSQL to configure</p>
+<p> 2. Run the 2 database scripts (HotelDatabaseScript.sql & Itineraries DB.sql) in MYSQL to configure.
+  
+ Database Configuration for HotelDatabase: ![image](https://user-images.githubusercontent.com/73065899/217423817-eadc3fc5-6e7f-434b-bde0-edc1f62b3e3f.png)
+Use these credentials to configure the database for hotels:
+  User: root
+  Password: Lolman@4567
+  connection: 127.0.0.1:3306
+  Database: ETIASSG2_db
+  
+ Database Configuration for Itenary database:
+  ![image](https://user-images.githubusercontent.com/73065899/217424942-7f38eb76-ec70-4642-a7de-63f238fd9704.png)
+Use these credentials to configure the database for hotels:
+  User: user
+  Password: password
+  connection: 127.0.0.1:3306
+  Database: db_itinerarie
+  
+  For the database for the booking of hotels and attractions feature there are three steps in order to initialize the database:
+
+  1. Create the booking database in MYSQL with these configurations:
+   ![image](https://user-images.githubusercontent.com/73065899/217422202-eead80c2-0e1b-4fb8-81ba-e1cedd88a801.png)
+    Connection name: booking_db
+  2. Run the server file in the booking feature folder: 
+  ![image](https://user-images.githubusercontent.com/73065899/217423014-3d92064a-c1a6-43a5-90ab-e0c436b6ad2f.png)
+  Once you have seen the message "successfully init db" we can move to the next step
+  3. We can jump straight into inserting the data for our table after we have created our booking_db database, do take note that we do not need to manually add our table in the database as it has been automatically added by the server.go file.
+  ![image](https://user-images.githubusercontent.com/73065899/217423652-d1773efb-c51e-47b8-ac7d-f33e99db5711.png)
+
+
+</p>
+
 
 <h1> Features </h1>
 
