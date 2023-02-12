@@ -7,13 +7,14 @@
 <p> The code inside this repository has been updated and will not run like before as we have uploaded each of our features on docker and google cloud, do not use these files to test the microservices, another file will be provided for the microservices thank you. </p>
 
 <h2> Docker and Google Cloud run implementation of our microservices </h2>
-We have uploaded each of our 4 features to a docker container and uploaded them to the google cloud run as part of our cloud implementation.
-Here are the google cloud run urls for each of our features:
+
+<p> We have uploaded each of our 4 features to a docker container and uploaded them to the google cloud run as part of our cloud implementation.
+Here are the google cloud run urls for each of our features, do take note that we currently do not have a front end interface for our features:
 
 1. Itenaries: https://itinerarie-u5obbcs2fa-uc.a.run.app
 2. Weather Forecast: https://weatherapp-u5obbcs2fa-uc.a.run.app
 3. Viewhotels: https://viewhotels-u5obbcs2fa-uc.a.run.app
-4. Booking: https://bookingapp-u5obbcs2fa-uc.a.run.app
+4. Booking: https://bookingapp-u5obbcs2fa-uc.a.run.app </p>
 
 <h2> How to set up </h2>
 <p> 1. For this application there are a total of 3 programs to run (open 3 separate terminals and enter "go run [PROGRAM_NAME]" in their own directory to configure):
