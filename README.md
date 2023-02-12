@@ -16,6 +16,29 @@ Here are the google cloud run urls for each of our features, do take note that w
 3. Viewhotels: https://viewhotels-u5obbcs2fa-uc.a.run.app
 4. Booking: https://bookingapp-u5obbcs2fa-uc.a.run.app </p>
 
+<p> 
+Google Cloud Run Service:<br>
+Itenarie:<br>
+![image](https://user-images.githubusercontent.com/73065899/218323358-2ebd5769-3181-4b30-86f0-46b64adababc.png)<br>
+
+
+
+Weather Forecast:<br>
+![image](https://user-images.githubusercontent.com/73065899/218323394-1f0ee426-0a56-4514-a301-7675f3e53609.png)<br>
+
+
+Viewhotels:<br>
+![image](https://user-images.githubusercontent.com/73065899/218323440-55751207-dc4b-4b1c-8888-d63c26548371.png)<br>
+
+
+
+
+Booking:<br>
+![image](https://user-images.githubusercontent.com/73065899/218323457-6dffddb5-1743-46d3-9330-8b15bcdf2432.png)<br>
+
+
+</p>
+
 <h2> How to set up </h2>
 <p> 1. For this application there are a total of 3 programs to run (open 3 separate terminals and enter "go run [PROGRAM_NAME]" in their own directory to configure):
 
