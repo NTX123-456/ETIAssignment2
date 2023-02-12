@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"os"
 	"strings"
 )
 
@@ -20,10 +22,21 @@ type WeatherForecast struct {
 }
 
 func main() {
-	http.HandleFunc("/weather/", weatherFilter)
+	log.Print("starting server...")
+	http.HandleFunc("/", handler)
 
-	fmt.Println("Listening at port 5010")
-	http.ListenAndServe(":5010", nil)
+	// Determine port for HTTP service.
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+		log.Printf("defaulting to port %s", port)
+	}
+
+	// Start HTTP server.
+	log.Printf("listening on port %s", port)
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
+		log.Fatal(err)
+	}
 }
 
 // loads API key from .apiConfig file
@@ -40,6 +53,10 @@ func loadApiConfig(filename string) (apiConfigData, error) {
 		return apiConfigData{}, err
 	}
 	return c, nil
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "<h1>Welcome to the Weather Console\n</h1>")
 }
 
 func weatherFilter(w http.ResponseWriter, r *http.Request) {

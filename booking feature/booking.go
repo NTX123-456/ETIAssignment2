@@ -17,28 +17,28 @@ import (
 
 /** Start: Models **/
 
-type PackageModel struct {
+type PackageModel1 struct {
 	gorm.Model
 	Name        string `json:"name"`
 	PackageType string `json:"package_type"`
 	Price       int    `json:"price"`
 }
 
-func (p PackageModel) TableName() string {
+func (p PackageModel) TableName1() string {
 	return "packages"
 }
 
-type BookingModel struct {
+type BookingModel1 struct {
 	gorm.Model
 	PackageId int    `json:"package_id"`
 	Username  string `json:"username"`
 }
 
-func (p BookingModel) TableName() string {
+func (p BookingModel) TableName1() string {
 	return "bookings"
 }
 
-type BookedPackage struct {
+type BookedPackage1 struct {
 	BookingId       int    `json:"booking_id"`
 	BookingUsername string `json:"booking_username"`
 	PackageId       int    `json:"package_id"`
@@ -101,7 +101,7 @@ var reader = bufio.NewReader(os.Stdin)
 
 var username string
 
-func main() {
+func Bookingmain() {
 	log.Print("starting server...")
 	http.HandleFunc("/", handler)
 
@@ -121,11 +121,11 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 
-	fmt.Fprintf(w, "<h1>Welcome to the Hotel Console\n</h1>")
+	fmt.Fprintf(w, "<h1>Welcome to the Booking Console\n</h1>")
 
 }
 
-func Bookingmain() {
+func Bookingmenu() {
 
 	fmt.Println("Welcome, what is your name?")
 	username = getInput()
