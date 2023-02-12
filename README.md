@@ -4,7 +4,7 @@
 <p> A simple travel planning application that can assist users in better planning their itinerary, allowing them to make more informed decisions about the country or accommodation they are staying in. There are 4 different Microservices, 3 of these microservices have their own seperate database in MYSQL with the exception of the weather update feature utilising a API to display the current weather from the selected country. </p>
 
 <h2> Important Note* </h2>
-<p> The code inside this repository has been updated and will not run as we have uploaded each of our features on docker and google cloud, do not use these files to test the microservices, thank you. </p>
+<p> The code inside this repository has been updated and will not run like before as we have uploaded each of our features on docker and google cloud, do not use these files to test the microservices, another file will be provided for the microservices thank you. </p>
 
 <h2> How to set up </h2>
 <p> 1. For this application there are a total of 3 programs to run (open 3 separate terminals and enter "go run [PROGRAM_NAME]" in their own directory to configure):
