@@ -11,7 +11,7 @@
 <p> We have uploaded each of our 4 features to a docker container and uploaded them to the google cloud run as part of our cloud implementation.
 Here are the google cloud run urls for each of our features, do take note that we currently do not have a front end interface for our features:
 
-1. Itenaries: https://itinerarie-u5obbcs2fa-uc.a.run.app
+1. Itineraries: https://itinerarie-u5obbcs2fa-uc.a.run.app
 2. Weather Forecast: https://weatherapp-u5obbcs2fa-uc.a.run.app
 3. Viewhotels: https://viewhotels-u5obbcs2fa-uc.a.run.app
 4. Booking: https://bookingapp-u5obbcs2fa-uc.a.run.app </p>
