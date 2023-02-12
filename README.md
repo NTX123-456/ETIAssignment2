@@ -4,7 +4,7 @@
 <p> A simple travel planning application that can assist users in better planning their itinerary, allowing them to make more informed decisions about the country or accommodation they are staying in. There are 4 different Microservices, 3 of these microservices have their own seperate database in MYSQL with the exception of the weather update feature utilising a API to display the current weather from the selected country. </p>
 
 <h2> Important Note* </h2>
-<p> The code inside this repository has been updated and will not run like before as we have uploaded each of our features on docker and google cloud, do not use these files to test the microservices, another folder will be provided for the microservices, thank you. </p>
+<p> The code inside this repository has been updated and will not run like before as we have uploaded each of our features on docker and google cloud, do not use these files to test the microservices, another folder will be provided for the microservices, thank you. Please visit this repository instead for microservice testing: https://github.com/NTX123-456/ETIASSIGNMENT2-Microservices- </p>
 
 <h2> Docker and Google Cloud run implementation of our microservices </h2>
 
