@@ -48,7 +48,7 @@ Viewhotels:<br>
 
 
 Booking:<br>
-![image](https://user-images.githubusercontent.com/73065899/218324019-36938906-662b-4325-b45c-7f72b1e3e389.png)
+![image](https://user-images.githubusercontent.com/73065899/218324019-36938906-662b-4325-b45c-7f72b1e3e389.png)<br>
 
 
 <h3>Docker Hub:</h3><br>
