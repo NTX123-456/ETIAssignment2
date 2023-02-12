@@ -35,7 +35,7 @@ func main() {
 
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func Hotelmain() {
 outer:
 	for {
 		fmt.Println(strings.Repeat("=", 10))
@@ -67,6 +67,12 @@ outer:
 			break outer
 		}
 	}
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+
+	fmt.Fprintf(w, "<h1>Welcome to the Hotel Console\n</h1>")
+
 }
 
 type Hotel struct {
