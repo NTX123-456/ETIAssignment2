@@ -8,7 +8,8 @@
 
 <h2> Docker and Google Cloud run implementation of our microservices </h2>
 
-<p> We have uploaded each of our 4 features to a docker container and uploaded them to the google cloud run as part of our cloud implementation.
+<p> We have uploaded each of our 4 features to a docker container and uploaded them to the google cloud run as part of our cloud implementation.This is to ensure that each Microservice would have their own container
+ 
 Here are the google cloud run urls for each of our features, do take note that we currently do not have a front end interface for our features:
 
 1. Itineraries: https://itinerarie-u5obbcs2fa-uc.a.run.app
