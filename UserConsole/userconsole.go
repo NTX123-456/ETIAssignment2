@@ -44,7 +44,7 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 
-	fmt.Fprintf(w, "<h1>Welcome to the Hotel Console\n</h1>")
+	fmt.Fprintf(w, "<h1>Welcome to the Itinerarie Console\n</h1>")
 
 }
 
