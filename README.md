@@ -23,15 +23,12 @@ Itenarie:<br>
 ![image](https://user-images.githubusercontent.com/73065899/218323495-6ff022e1-f782-431d-927f-6c1f57b11674.png)<br>
 
 
-
 Weather Forecast:<br>
 ![image](https://user-images.githubusercontent.com/73065899/218323394-1f0ee426-0a56-4514-a301-7675f3e53609.png)<br>
 
 
 Viewhotels:<br>
 ![image](https://user-images.githubusercontent.com/73065899/218323440-55751207-dc4b-4b1c-8888-d63c26548371.png)<br>
-
-
 
 
 Booking:<br>
