@@ -34,6 +34,23 @@ Viewhotels:<br>
 Booking:<br>
 ![image](https://user-images.githubusercontent.com/73065899/218323457-6dffddb5-1743-46d3-9330-8b15bcdf2432.png)<br>
 
+<h3>Google Cloud Artifact Registry:</h3><br>
+
+Itenarie:<br>
+![image](https://user-images.githubusercontent.com/73065899/218323935-bd392f61-6d0c-44d7-bf5c-28e558af4939.png)<br>
+
+Weather Forecast:<br>
+![image](https://user-images.githubusercontent.com/73065899/218323966-d5d931ae-f4ed-443d-beb3-208b82b0fd54.png)<br>
+
+
+Viewhotels:<br>
+![image](https://user-images.githubusercontent.com/73065899/218323985-7e86c86b-06f7-44af-80a7-5ddfc5d3ec15.png)<br>
+
+
+Booking:<br>
+![image](https://user-images.githubusercontent.com/73065899/218324019-36938906-662b-4325-b45c-7f72b1e3e389.png)
+
+
 <h3>Docker Hub:</h3><br>
 
 Weather Forecast and Booking:<br>
